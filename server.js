@@ -23,4 +23,4 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialNet
 
 mongoose.set('debug', true);
 
-app.listen(PORT, () => console.log(`Connected to Local Host Port ${PORT}`));
+app.listen(PORT, () => console.log(`🚀 Connected to Local Host Port ${PORT} 🚀`));
