@@ -9,7 +9,7 @@
 - [Title](#title)
 - [Table of Contents](#tableOfContents)
 - [User Story](#userStory)
-- [](#)
+- [Descripton](#description)
 - [](#)
 
 <a href = "userStory"></a>
@@ -36,7 +36,11 @@ WHEN I test API POST and DELETE routes in Insomnia
 THEN I am able to successfully create and delete reactions to thoughts and add and remove friends to a user’s friend list
 ```
 
-<a href = ""></a>
+<a href = "description"></a>
+
+## Description
+
+For this project we were required to build a backend of a social media website comprised with users, thoughts, and reactions. 
 
 <a href = ""></a>
 

@@ -1,35 +1,18 @@
-const router = require('express').Router();
-
-const {
-    getAllThoughts,
-    getThoughtsById,
-    createThoughts,
-    updateThoughts,
-    deleteThoughts,
-    addReaction,
-    deleteReaction
-} = require('../../controllers/thoughtsController');
+const router = require('express').Router()
+const { getThoughts, getOneThought, newThought, updateThought, deleteThought, postReaction, deleteReaction } = require('../../controllers/thoughtController.js')
 
 
-// /api/thoughts GET
-
-router.route('/').get(getAllThoughts);
-
-// /api/thoughts/:id GET, PUT and DELETE
-
-router.route('/:id').get(getThoughtsById).put(updateThoughts).delete(deleteThoughts);
-
-// /api/thoughts/:userId POST
-
-router.route('/:userId').post(createThoughts);
-
-// /api/thoughts/:thoughtId/reactions POST
-
-router.route('/:thoughtId/reactions/:reactionId').post(addReaction);
-
-// /api/thoughts/:thoughtId/reactionId DELETE
-
-router.route('/:thoughtId/reactions/:reactionId').delete(deleteReaction);
+// GET all thoughts, POST new thoughts
+router.route('/').get(getThoughts).post(newThought)
 
 
-module.exports = router;
+// GET one by _id & PUT update a thought & DELETE a thought
+router.route('/:id').get(getOneThought).put(updateThought).delete(deleteThought)
+
+// POST a reaction in a single thought's reaction
+router.route('/:id/reactions').post(postReaction)
+
+
+// DELETE to pull and remove a reaction by the reactionId 
+router.route('/:id/reactions/:reactionId').delete(deleteReaction)
+module.exports = router

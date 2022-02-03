@@ -1,26 +1,19 @@
 const express = require('express');
-const mongoose = require('mongoose');
+const db = require('./config/connection');
+const routes = require('./routes');
 
-const app = express();
+const cwd = process.cwd(); 
+
 const PORT = process.env.PORT || 3001;
+const app = express();
 
+
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.urlencoded ({ extended: true }));
+app.use(routes);
 
-app.use(express.static('public'));
-
-app.use(require('./routes'));
-
-// Connecting Mongoose
-
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/socialNetworkAPI', {
-    useFindAndModify: false,
-    useNewUrlParser: true, 
-    useUnifiedTopology: true 
+db.once('open', () => {
+  app.listen(PORT, () => {
+    console.log(`🚀 Connected to Local Host Port ${PORT} 🚀`);
+  });
 });
-
-// Mongoose Queries
-
-mongoose.set('debug', true);
-
-app.listen(PORT, () => console.log(`🚀 Connected to Local Host Port ${PORT} 🚀`));

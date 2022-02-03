@@ -1,29 +1,16 @@
-const router = require('experrss').Router();
+const router = require('express').Router()
+const { getUsers, createUser, getOneUser, updateUser, deleteUser, addFriend, deleteFriend } = require('../../controllers/userController')
 
-const { route } = require('..');
-const {
-    getAllUsers, 
-    getUsersById,
-    createUsers,
-    updateUsers,
-    deleteUsers,
-    addFriend,
-    deleteFriend
-} = require('../../controllers/usersController');
 
-// /api/users GET and POST
+// GET all users and POST a new user
+router.route('/').get(getUsers).post(createUser)
 
-router.route('/').get(getAllUsers).post(createUsers);
+//GET one user, PUT update a user, and DELETE one user
+router.route('/:id').get(getOneUser).put(updateUser).delete(deleteUser)
 
-// /api/users/:id GET, PUT, and DELETE
-
-router.route('/:id').get(getUsersById).put(updateUsers).delete(deleteUsers);
-
-// /api/users/:id/friends/:friendId POST and DELETE
-
-router.route('/:id/friends/:friendId').post(addFriend).delete(deleteFriend);
+//POST for new friend to a user and DELETE a friend from a user's friends
+router.route('/:id/friends/:friendId').post(addFriend).delete(deleteFriend)
 
 
 
-
-module.exports = router;
+module.exports = router
