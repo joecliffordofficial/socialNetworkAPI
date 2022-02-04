@@ -15,4 +15,8 @@ router.route('/:id/reactions').post(postReaction)
 
 // DELETE to pull and remove a reaction by the reactionId 
 router.route('/:id/reactions/:reactionId').delete(deleteReaction)
+
+
+
+
 module.exports = router
