@@ -10,7 +10,8 @@
 - [Table of Contents](#tableOfContents)
 - [User Story](#userStory)
 - [Descripton](#description)
-- [](#)
+- [Video](#video)
+- [Technology Used](#tech)
 
 <a href = "userStory"></a>
 
@@ -40,10 +41,51 @@ THEN I am able to successfully create and delete reactions to thoughts and add a
 
 ## Description
 
-For this project we were required to build a backend of a social media website comprised with users, thoughts, and reactions. 
+For this project we were required to build a backend of a social media website comprised with users, thoughts, and reactions. Below you will find a link to a demo video, images of our database on MongoDB Compass, and a list of technology used. 
 
-<a href = ""></a>
+When installing, clone this repository and run:
+```
+npm install -y
+```
 
-<a href = ""></a>
+After that is done you will want to run the seeds files:
+```
+node utils/seeds.js
+```
 
-<a href = ""></a>
+Then to turn on the program run:
+```
+npm start
+```
+
+<a href = "video"></a>
+
+## Video
+
+[Video Link](https://watch.screencastify.com/v/Q1kRFoPD79kPXD3sIgub)
+
+<a href = "images"></a>
+
+## Images
+
+<img src = "./Images/screenShotOne.png">
+<img src = "./Images/screenShotTwo.png">
+
+
+<a href = "tech"></a>
+
+## Technology Used
+
+- MongoDB
+- Mongoose
+- NodeJS
+- Express
+- Insomnia
+
+<a href = "contact"></a>
+
+## Contact
+
+If you would like to contribute to this code and develop it further please feel free! 
+
+[GitHub](https://github.com/joecliffordofficial)

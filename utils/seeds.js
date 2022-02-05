@@ -3,7 +3,6 @@ const { User, Thought } = require('../models')
 
 
 // Connect to mongodb
-
 connection.once('open', async () => {
     // Deletes entries in collection
     await User.deleteMany({})
@@ -37,7 +36,7 @@ connection.once('open', async () => {
 
     await User.collection.insertMany(users)
 
-    await Thought.collection.insertMany(users)
+    await Thought.collection.insertMany(thoughts)
 
 
     console.table(users)
